@@ -29,8 +29,17 @@ Build the node
 pnpm run build
 ```
 
+```bash
+Change the version in package.json file
+````
+
 
 Publish Node
 ```bash
 npm publish
+```
+
+Go to n8n guide to publish the community node.
+```bash
+https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/#standards
 ```
