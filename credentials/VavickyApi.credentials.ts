@@ -3,6 +3,7 @@ import type { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'n8n
 export class VavickyApi implements ICredentialType {
   name = 'vavickyApi';
   displayName = 'VA Vicky API';
+  documentationUrl = "https://aiagency.now";
   properties: INodeProperties[] = [
     {
       displayName: 'VA Vicky API Key',

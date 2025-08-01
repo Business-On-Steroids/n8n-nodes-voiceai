@@ -23,6 +23,7 @@ export class Vavicky implements INodeType {
 		defaults: {
 			name: 'VaVicky',
 		},
+		documentationUrl: "https://aiagency.now",
 		inputs: [NodeConnectionType.Main],
 		outputs: [NodeConnectionType.Main],
 
@@ -39,200 +40,180 @@ export class Vavicky implements INodeType {
 				displayName: 'Operation',
 				name: 'operation',
 				type: 'options',
+				noDataExpression: true,
+				default: "getAssistants",
 				options: [
-
-					// User Operations
 					{
-						name: 'Get User Details',
-						value: 'getUser',
-						description: 'Get user data this includes tokens and settings',
-					},
-
-					{
-						name: 'Update White Label Details',
-						value: 'updateWhiteLabel',
-						description: 'Update White Label Details; name, description and color',
-					},
-
-					{
-						name: 'Update SMTP',
-						value: 'updateSMTP',
-						description: 'Update your smtp settings for your custom email notifications',
-					},
-
-					{
-						name: 'Update OpenAI Token',
-						value: 'updateTokenOpenai',
-						description: 'Update your OpenAI API Key',
-					},
-
-					{
-						name: 'Update Elevenlabs Token',
-						value: 'updateTokenElevenlabs',
-						description: 'Update your Elevenlabs API Key',
-					},
-
-					{
-						name: 'Update Open Router API Key',
-						value: 'updateTokenOpenRouter',
-						description: 'Update your Open Router API Key',
-					},
-
-					{
-						name: 'Update Deep Seek API Key',
-						value: 'updateTokenDeepSeek',
-						description: 'Update your Deep Seek API Key',
-					},
-
-					{
-						name: 'Update Google Gemini API Key',
-						value: 'updateTokenGemini',
-						description: 'Update your Google Gemini API Key',
-					},
-		
-
-
-					// Assistant Operations
-					{
-						name: 'Get Assistants',
-						value: 'getAssistants',
-						description: 'Get all assistants for the authenticated user',
+						"name": "Buy Twilio Number",
+						"value": "buyTwilioNumber",
+						"description": "Purchase a new Twilio phone number"
 					},
 					{
-						name: 'Get Assistant',
-						value: 'getAssistant',
-						description: 'Get basic information about a specific assistant',
+						"name": "Cancel Call",
+						"value": "cancelCall",
+						"description": "Cancel an active phone call"
 					},
 					{
-						name: 'Get One Assistant',
-						value: 'getOneAssistant',
-						description: 'Get complete information about a specific assistant',
+						"name": "Chat With Assistant",
+						"value": "chatWithAssistant",
+						"description": "Chat with a specific assistant"
 					},
 					{
-						name: 'Create Assistant',
-						value: 'createAssistant',
-						description: 'Create a new assistant',
+						"name": "Connect Twilio",
+						"value": "connectTwilio",
+						"description": "Connect Twilio account credentials"
 					},
 					{
-						name: 'Update Assistant',
-						value: 'updateAssistant',
-						description: 'Update an existing assistant',
+						"name": "Create Assistant",
+						"value": "createAssistant",
+						"description": "Create a new assistant"
 					},
 					{
-						name: 'Delete Assistant',
-						value: 'deleteAssistant',
-						description: 'Delete an assistant',
-					},
-
-					// Assistant Files Operations
-					{
-						name: 'Get Assistant Files',
-						value: 'getAssistantFiles',
-						description: 'Get files associated with an assistant',
+						"name": "Delete Assistant",
+						"value": "deleteAssistant",
+						"description": "Delete an assistant"
 					},
 					{
-						name: 'Update Assistant Files',
-						value: 'updateAssistantFiles',
-						description: 'Upload files to an assistant',
+						"name": "Delete Assistant File",
+						"value": "deleteAssistantFile",
+						"description": "Delete a specific file from an assistant"
 					},
 					{
-						name: 'Delete Assistant File',
-						value: 'deleteAssistantFile',
-						description: 'Delete a specific file from an assistant',
-					},
-
-					// Usage and Analytics
-					{
-						name: 'Get Assistant Usage',
-						value: 'getAssistantUsage',
-						description: 'Get usage statistics for an assistant',
+						"name": "Disconnect Twilio",
+						"value": "disconnectTwilio",
+						"description": "Disconnect Twilio account"
 					},
 					{
-						name: 'Get Assistants Token Usage',
-						value: 'getAssistantsTokenUsage',
-						description: 'Get token usage across all assistants',
-					},
-
-					// Specialized Endpoints
-					{
-						name: 'Get Dashboard Assistant',
-						value: 'getDashboardAssistant',
-						description: 'Get the dashboard assistant for the authenticated user',
+						"name": "Get Assistant",
+						"value": "getAssistant",
+						"description": "Get basic information about a specific assistant"
 					},
 					{
-						name: 'Chat With Assistant',
-						value: 'chatWithAssistant',
-						description: 'Chat with a specific assistant',
-					},
-
-					// Twilio Operations
-					{
-						name: 'Get Twilio Usage',
-						value: 'getTwilioUsage',
-						description: 'Get Twilio usage statistics',
+						"name": "Get Assistant Files",
+						"value": "getAssistantFiles",
+						"description": "Get files associated with an assistant"
 					},
 					{
-						name: 'Get Twilio Numbers',
-						value: 'getTwilioNumbers',
-						description: 'Get all Twilio phone numbers',
+						"name": "Get Assistant Usage",
+						"value": "getAssistantUsage",
+						"description": "Get usage statistics for an assistant"
 					},
 					{
-						name: 'Get Available Numbers',
-						value: 'getAvailableNumbers',
-						description: 'Get available phone numbers for purchase',
+						"name": "Get Assistants",
+						"value": "getAssistants",
+						"description": "Get all assistants for the authenticated user"
 					},
 					{
-						name: 'Get Calls In Progress',
-						value: 'getCallsInProgress',
-						description: 'Get all calls currently in progress',
+						"name": "Get Assistants Token Usage",
+						"value": "getAssistantsTokenUsage",
+						"description": "Get token usage across all assistants"
 					},
 					{
-						name: 'Buy Twilio Number',
-						value: 'buyTwilioNumber',
-						description: 'Purchase a new Twilio phone number',
+						"name": "Get Available Numbers",
+						"value": "getAvailableNumbers",
+						"description": "Get available phone numbers for purchase"
 					},
 					{
-						name: 'Update Twilio Number',
-						value: 'updateTwilioNumber',
-						description: 'Update Twilio number configuration',
+						"name": "Get Calls In Progress",
+						"value": "getCallsInProgress",
+						"description": "Get all calls currently in progress"
 					},
 					{
-						name: 'Connect Twilio',
-						value: 'connectTwilio',
-						description: 'Connect Twilio account credentials',
+						"name": "Get Dashboard Assistant",
+						"value": "getDashboardAssistant",
+						"description": "Get the dashboard assistant for the authenticated user"
 					},
 					{
-						name: 'Send SMS',
-						value: 'sendSMS',
-						description: 'Send SMS message through assistant',
+						"name": "Get One Assistant",
+						"value": "getOneAssistant",
+						"description": "Get complete information about a specific assistant"
 					},
 					{
-						name: 'Make Call',
-						value: 'makeCall',
-						description: 'Make a phone call through assistant',
+						"name": "Get Twilio Numbers",
+						"value": "getTwilioNumbers",
+						"description": "Get all Twilio phone numbers"
 					},
 					{
-						name: 'Make Bulk Call',
-						value: 'makeBulkCall',
-						description: 'Make bulk phone calls',
+						"name": "Get Twilio Usage",
+						"value": "getTwilioUsage",
+						"description": "Get Twilio usage statistics"
 					},
 					{
-						name: 'Cancel Call',
-						value: 'cancelCall',
-						description: 'Cancel an active phone call',
+						"name": "Get User Details",
+						"value": "getUser",
+						"description": "Get user data this includes tokens and settings"
 					},
 					{
-						name: 'Disconnect Twilio',
-						value: 'disconnectTwilio',
-						description: 'Disconnect Twilio account',
+						"name": "Make Bulk Call",
+						"value": "makeBulkCall",
+						"description": "Make bulk phone calls"
 					},
+					{
+						"name": "Make Call",
+						"value": "makeCall",
+						"description": "Make a phone call through assistant"
+					},
+					{
+						"name": "Send SMS",
+						"value": "sendSMS",
+						"description": "Send SMS message through assistant"
+					},
+					{
+						"name": "Update Assistant",
+						"value": "updateAssistant",
+						"description": "Update an existing assistant"
+					},
+					{
+						"name": "Update Assistant Files",
+						"value": "updateAssistantFiles",
+						"description": "Upload files to an assistant"
+					},
+					{
+						"name": "Update Deep Seek API Key",
+						"value": "updateTokenDeepSeek",
+						"description": "Update your Deep Seek API Key"
+					},
+					{
+						"name": "Update Elevenlabs Token",
+						"value": "updateTokenElevenlabs",
+						"description": "Update your Elevenlabs API Key"
+					},
+					{
+						"name": "Update Google Gemini API Key",
+						"value": "updateTokenGemini",
+						"description": "Update your Google Gemini API Key"
+					},
+					{
+						"name": "Update Open Router API Key",
+						"value": "updateTokenOpenRouter",
+						"description": "Update your Open Router API Key"
+					},
+					{
+						"name": "Update OpenAI Token",
+						"value": "updateTokenOpenai",
+						"description": "Update your OpenAI API Key"
+					},
+					{
+						"name": "Update SMTP",
+						"value": "updateSMTP",
+						"description": "Update your smtp settings for your custom email notifications"
+					},
+					{
+						"name": "Update Twilio Number",
+						"value": "updateTwilioNumber",
+						"description": "Update Twilio number configuration"
+					},
+					{
+						"name": "Update White Label Details",
+						"value": "updateWhiteLabel",
+						"description": "Update White Label Details; name, description and color"
+					}
 				],
-				default: 'getAssistants',
 				description: 'Choose an operation',
 			},
 
 			{
-				displayName: "whitelabel Domain",
+				displayName: "Whitelabel Domain",
 				type: "string",
 				default: '',
 				displayOptions: {
@@ -243,7 +224,7 @@ export class Vavicky implements INodeType {
 				name: "whitelabel_domain"
 			},
 			{
-				displayName: "whitelabel Name",
+				displayName: "Whitelabel Name",
 				type: "string",
 				default: '',
 				displayOptions: {
@@ -255,7 +236,7 @@ export class Vavicky implements INodeType {
 			},
 			{
 				displayName: "Whitelabel Color",
-				type: "string",
+				type: "color",
 				default: '',
 				displayOptions: {
 					show: {
@@ -265,7 +246,7 @@ export class Vavicky implements INodeType {
 				name: "whitelabel_color"
 			},
 			{
-				displayName: "whitelabel Description",
+				displayName: "Whitelabel Description",
 				type: "string",
 				default: '',
 				displayOptions: {
@@ -277,7 +258,7 @@ export class Vavicky implements INodeType {
 			},
 
 			{
-				displayName: "openai_token",
+				displayName: "OpenAI API Key",
 				type: "string",
 				default: '',
 				displayOptions: {
@@ -291,7 +272,7 @@ export class Vavicky implements INodeType {
 				name: "openai_token"
 			},
 			{
-				displayName: "Elevenlabs token",
+				displayName: "Elevenlabs Token",
 				type: "string",
 				default: '',
 				displayOptions: {
@@ -305,7 +286,7 @@ export class Vavicky implements INodeType {
 				name: "elevenlabs_token"
 			},
 			{
-				displayName: "Deep Seek token",
+				displayName: "Deep Seek API Key",
 				type: "string",
 				default: '',
 				displayOptions: {
@@ -319,7 +300,7 @@ export class Vavicky implements INodeType {
 				name: "deepseek_token"
 			},
 			{
-				displayName: "Google Gemini token",
+				displayName: "Google Gemini API Key",
 				type: "string",
 				default: '',
 				displayOptions: {
@@ -333,7 +314,7 @@ export class Vavicky implements INodeType {
 				name: "gemini_token"
 			},
 			{
-				displayName: "Open Router token",
+				displayName: "Open Router API Key",
 				type: "string",
 				default: '',
 				displayOptions: {
@@ -346,7 +327,7 @@ export class Vavicky implements INodeType {
 				},
 				name: "openrouter_token"
 			},
- 
+
 
 
 			{
@@ -540,17 +521,17 @@ export class Vavicky implements INodeType {
 				displayName: 'Limit',
 				name: 'limit',
 				type: 'number',
-				default: 20,
+				default: 50,
 				typeOptions: {
 					minValue: 1,
-					maxValue: 1000,
+					// maxValue: 1000,
 				},
 				displayOptions: {
 					show: {
 						operation: ['getTwilioUsage'],
 					},
 				},
-				description: 'Limit number of records returned',
+				description: 'Max number of results to return',
 			},
 
 			// Available Numbers parameters
@@ -776,7 +757,7 @@ export class Vavicky implements INodeType {
 				displayName: 'Timezone',
 				name: 'timezone',
 				type: 'options',
-				default: "America/New_York",
+				default: "",
 				options: timezones.map(s => {
 					return { name: s, value: s }
 				}),
@@ -896,8 +877,8 @@ export class Vavicky implements INodeType {
 					{ name: 'Alloy', value: 'alloy' },
 					{ name: 'Echo', value: 'echo' },
 					{ name: 'Fable', value: 'fable' },
-					{ name: 'Onyx', value: 'onyx' },
 					{ name: 'Nova', value: 'nova' },
+					{ name: 'Onyx', value: 'onyx' },
 					{ name: 'Shimmer', value: 'shimmer' },
 				],
 				default: 'alloy',
@@ -927,7 +908,7 @@ export class Vavicky implements INodeType {
 
 			// Call Limits Configuration
 			{
-				displayName: 'Limit Call Time (seconds)',
+				displayName: 'Limit Call Time (Seconds)',
 				name: 'limit_call_time',
 				type: 'number',
 				default: 240,
@@ -1031,7 +1012,7 @@ export class Vavicky implements INodeType {
 				},
 			},
 			{
-				displayName: 'Twilio Speech Timeout (seconds)',
+				displayName: 'Twilio Speech Timeout (Seconds)',
 				name: 'twilio_speech_timeout',
 				type: 'number',
 				default: 3,
@@ -1042,7 +1023,7 @@ export class Vavicky implements INodeType {
 				},
 			},
 			{
-				displayName: 'Twilio Initial Delay (seconds)',
+				displayName: 'Twilio Initial Delay (Seconds)',
 				name: 'twilio_initial_delay',
 				type: 'number',
 				default: 1,
