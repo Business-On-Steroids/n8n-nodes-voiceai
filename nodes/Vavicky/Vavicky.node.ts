@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-case-declarations */
 import {
 	IExecuteFunctions,
 	INodeExecutionData,
@@ -1125,11 +1127,13 @@ export class Vavicky implements INodeType {
 		for (let i = 0; i < items.length; i++) {
 			try {
 				const operation = this.getNodeParameter('operation', i) as string;
-				let options: any = {
+				const options: any = {
 					headers: {
 						'Authorization': `Bearer ${credentials.apiKey}`,
 						'Content-Type': 'application/json',
 					},
+					method: "",
+					uri: ""
 				};
 
 				switch (operation) {
