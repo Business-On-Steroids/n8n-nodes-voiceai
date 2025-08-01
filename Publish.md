@@ -14,6 +14,11 @@ cd n8n-nodes-voiceai
 pnpm install
 ```
 
+Install the Linter
+```bash
+pnpm add eslint --save-dev
+```
+
 Ensure there are not errors when you run
 ```bash
 pnpm run prepublishOnly
