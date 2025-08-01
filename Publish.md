@@ -4,6 +4,8 @@ Open porject in VScode
 
 Open the terminal
 
+Change from powershell to command prompt
+
 ```bash
 cd n8n-nodes-voiceai
 ```
