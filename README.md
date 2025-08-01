@@ -15,6 +15,12 @@ _App/service name_ is _one or two sentences describing the service this node int
 
 ## Installation
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+- 🔑 Under settings and integrations: Copy Your VA Vicky API KEY
+- Add any wanted Platform & AI integrations
+- 🤖 Navigate to AI Employees: Create AI Employee / Assistant
+- 🆔️ COPY Assistant ID: From URL on AI Assistant Settings Page or Assistant ID Section
+- 📋Paste Both Credentials into N8N VoiceAI VAVicky Node
+- ↔️ Add NEW 🆔️ Assistant ID to each New N8N Workflow as Needed
 
 ## Operations
 		"Buy Twilio Number",
