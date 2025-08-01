@@ -1,6 +1,6 @@
 # Publish
 
-Open porject in VScode
+Open project in VScode
 
 Open the terminal
 
