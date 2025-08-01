@@ -7,7 +7,7 @@ Open the terminal
 Change from powershell to command prompt
 
 ```bash
-cd n8n-nodes-voiceai
+cd n8n-nodes-voiceai-main
 ```
 
 ```bash
