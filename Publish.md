@@ -5,6 +5,10 @@ Open porject in VScode
 Open the terminal
 
 ```bash
+cd n8n-nodes-voiceai
+```
+
+```bash
 pnpm install
 ```
 
