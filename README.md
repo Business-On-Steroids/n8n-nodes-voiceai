@@ -62,6 +62,15 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 ## Credentials
 Go to your VA Vicky and login and then goto to settings can copy the API Key. Paste it as the Bearer Token in the VA Vicky node
 
+
+## Usage
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
+<img src="/usage (1).jpeg">
+<img src="/usage (2).jpeg">
+<img src="/usage (3).jpeg">
+
+
+
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
