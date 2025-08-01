@@ -22,6 +22,8 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 - 📋Paste Both Credentials into N8N VoiceAI VAVicky Node
 - ↔️ Add NEW 🆔️ Assistant ID to each New N8N Workflow as Needed
 
+
+
 ## Operations
 		"Buy Twilio Number",
     "Cancel Call",
@@ -63,7 +65,9 @@ Go to your VA Vicky and login and then goto to settings can copy the API Key. Pa
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-https://app.vavicky.com/docs
+<img src="/screenshot (1).jpeg">
+<img src="/screenshot (2).jpeg">
+<img src="/screenshot (3).jpeg">
 
 ## Version history
 Initial Version
