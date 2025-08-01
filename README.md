@@ -52,7 +52,7 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
     "Update White Label Details"
 
 ## Credentials
-Go to your VA Vicky and login and then goto to settings can copy the API Key
+Go to your VA Vicky and login and then goto to settings can copy the API Key. Paste it as the Bearer Token in the VA Vicky node
 
 ## Resources
 
