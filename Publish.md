@@ -24,14 +24,15 @@ Ensure there are not errors when you run
 pnpm run prepublishOnly
 ```
 
+```bash
+Change the version in package.json file
+````
+
+
 Build the node
 ```bash
 pnpm run build
 ```
-
-```bash
-Change the version in package.json file
-````
 
 
 Publish Node
