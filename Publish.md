@@ -11,9 +11,7 @@ Open project folder <strong>n8n-nodes-voiceai</strong> in VScode
 cd n8n-nodes-voiceai
 ```
 
-
 Open the terminal
-
 ```bash
 pnpm install
 ```
