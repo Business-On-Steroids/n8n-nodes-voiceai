@@ -1,14 +1,15 @@
 # Publish
 
-Open project in VScode
+Make sure you have git install
+```
+https://git-scm.com/downloads
+```
+
+Open <strong>n8n-nodes-voiceai-main</strong> folder in VScode
 
 Open the terminal
 
 Change from powershell to command prompt
-
-```bash
-cd n8n-nodes-voiceai-main
-```
 
 ```bash
 pnpm install
