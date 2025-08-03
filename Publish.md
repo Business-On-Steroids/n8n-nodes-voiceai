@@ -28,8 +28,12 @@ Build the node
 pnpm run build
 ```
 
+Test Node
+```bash
+pnpm run test:credentials
+```
 
 Publish Node
 ```bash
-npm publish
+npm publish --access public
 ```
