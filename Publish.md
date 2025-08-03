@@ -5,7 +5,12 @@ Close the repository
 git clone https://github.com/Business-On-Steroids/n8n-nodes-voiceai.git
 ```
 
+Go into the folder
 Open project folder <strong>n8n-nodes-voiceai</strong> in VScode
+```bash
+cd n8n-nodes-voiceai
+```
+
 
 Open the terminal
 
