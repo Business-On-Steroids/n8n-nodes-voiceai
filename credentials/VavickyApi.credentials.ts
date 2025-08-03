@@ -1,32 +1,54 @@
-import type { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { 
+  IAuthenticateGeneric, 
+  ICredentialType, 
+  INodeProperties,
+  ICredentialTestRequest 
+} from 'n8n-workflow';
 
 export class VavickyApi implements ICredentialType {
   name = 'vavickyApi';
-  displayName = 'VA Vicky API';
-  documentationUrl = "https://aiagency.now";
+  displayName = 'VAVicky API';
+  documentationUrl = 'https://github.com/Business-On-Steroids/n8n-nodes-voiceai/blob/main/README.md';
+  
   properties: INodeProperties[] = [
     {
-      displayName: 'VA Vicky API Key',
-      hint: "You can find your key in the Settings & Integration tab",
+      displayName: 'API Key',
       name: 'apiKey',
       type: 'string',
-      default: '',
+      description: 'Found in the Settings & Integration tab of your VAVicky account',
+      hint: 'You can find your key in the Settings & Integration tab',
       typeOptions: {
         password: true,
-      }
+      },
+      default: '',
+      required: true,
     },
   ];
 
-  // This allows the credential to be used by other parts of n8n
-  // stating how this credential is injected as part of the request
-  // An example is the Http Request node that can make generic calls
-  // reusing this credential
   authenticate: IAuthenticateGeneric = {
     type: 'generic',
     properties: {
       headers: {
-        Authorization: '={{"Bearer " + $credentials.apiKey}}',
+        Authorization: '=Bearer {{$credentials.apiKey}}',
       },
     },
+  };
+
+  test: ICredentialTestRequest = {
+    request: {
+      baseURL: 'https://backend.vavicky.com',
+      url: '/vavicky/api/user',
+      method: 'GET',
+    },
+    rules: [
+      {
+        type: 'responseSuccessBody',
+        properties: {
+          message: 'API authentication failed',
+          key: 'status',
+          value: 'success',
+        },
+      },
+    ],
   };
 }

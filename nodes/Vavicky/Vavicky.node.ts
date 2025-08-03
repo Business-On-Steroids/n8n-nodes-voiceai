@@ -7,7 +7,6 @@ import {
 	INodeTypeDescription,
 	NodeConnectionType,
 } from 'n8n-workflow';
-import { URLSearchParams } from "url"
 import { NodeOperationError } from 'n8n-workflow';
 import timezones from './timzone.json';
 
@@ -21,11 +20,11 @@ export class Vavicky implements INodeType {
 		group: ['transform'],
 		version: 1,
 		icon: { light: 'file:icon.svg', dark: 'file:icon.svg' },
-		description: 'Complete User friendly VoiceAI Platform that sends and receives Phone calls, SMS text messages, automates messages across Social Media Platforms, and seamlessly integrates into any website and Business CRM for the world\'s Best Professional fully integrated VoiceAI platform with any businesses internal CRM, Calendars and Booking systems. Full White Label Agency Accounts available, you keep 100% of all profits and ful branding and domain control.',
+		description: 'Complete user friendly VoiceAI platform that sends and receives phone calls, SMS text messages, automates messages across social media platforms, and seamlessly integrates into any website and business CRM for the world\'s best professional fully integrated VoiceAI platform with any businesses internal CRM, Calendars and Booking systems. Full White Label Agency accounts available, you keep 100% of all profits and full branding and domain control.',
 		defaults: {
-			name: 'VaVicky',
+			name: 'VoiceAI VAVicky',
 		},
-		documentationUrl: "https://aiagency.now",
+		documentationUrl: "https://github.com/Business-On-Steroids/n8n-nodes-voiceai/blob/main/README.md",
 		inputs: [NodeConnectionType.Main],
 		outputs: [NodeConnectionType.Main],
 
@@ -46,17 +45,17 @@ export class Vavicky implements INodeType {
 				default: "getAssistants",
 				options: [
 					{
-						"name": "Buy Twilio Number",
+						"name": "Buy Twilio number",
 						"value": "buyTwilioNumber",
 						"description": "Purchase a new Twilio phone number"
 					},
 					{
-						"name": "Cancel Call",
+						"name": "Cancel call",
 						"value": "cancelCall",
 						"description": "Cancel an active phone call"
 					},
 					{
-						"name": "Chat With Assistant",
+						"name": "Chat with assistant",
 						"value": "chatWithAssistant",
 						"description": "Chat with a specific assistant"
 					},
@@ -66,17 +65,17 @@ export class Vavicky implements INodeType {
 						"description": "Connect Twilio account credentials"
 					},
 					{
-						"name": "Create Assistant",
+						"name": "Create assistant",
 						"value": "createAssistant",
 						"description": "Create a new assistant"
 					},
 					{
-						"name": "Delete Assistant",
+						"name": "Delete assistant",
 						"value": "deleteAssistant",
 						"description": "Delete an assistant"
 					},
 					{
-						"name": "Delete Assistant File",
+						"name": "Delete assistant file",
 						"value": "deleteAssistantFile",
 						"description": "Delete a specific file from an assistant"
 					},
@@ -86,72 +85,72 @@ export class Vavicky implements INodeType {
 						"description": "Disconnect Twilio account"
 					},
 					{
-						"name": "Get Assistant",
+						"name": "Get assistant",
 						"value": "getAssistant",
 						"description": "Get basic information about a specific assistant"
 					},
 					{
-						"name": "Get Assistant Files",
+						"name": "Get assistant files",
 						"value": "getAssistantFiles",
 						"description": "Get files associated with an assistant"
 					},
 					{
-						"name": "Get Assistant Usage",
+						"name": "Get assistant usage",
 						"value": "getAssistantUsage",
 						"description": "Get usage statistics for an assistant"
 					},
 					{
-						"name": "Get Assistants",
+						"name": "Get assistants",
 						"value": "getAssistants",
 						"description": "Get all assistants for the authenticated user"
 					},
 					{
-						"name": "Get Assistants Token Usage",
+						"name": "Get assistants token usage",
 						"value": "getAssistantsTokenUsage",
 						"description": "Get token usage across all assistants"
 					},
 					{
-						"name": "Get Available Numbers",
+						"name": "Get available numbers",
 						"value": "getAvailableNumbers",
 						"description": "Get available phone numbers for purchase"
 					},
 					{
-						"name": "Get Calls In Progress",
+						"name": "Get calls in progress",
 						"value": "getCallsInProgress",
 						"description": "Get all calls currently in progress"
 					},
 					{
-						"name": "Get Dashboard Assistant",
+						"name": "Get dashboard assistant",
 						"value": "getDashboardAssistant",
 						"description": "Get the dashboard assistant for the authenticated user"
 					},
 					{
-						"name": "Get One Assistant",
+						"name": "Get one assistant",
 						"value": "getOneAssistant",
 						"description": "Get complete information about a specific assistant"
 					},
 					{
-						"name": "Get Twilio Numbers",
+						"name": "Get Twilio numbers",
 						"value": "getTwilioNumbers",
 						"description": "Get all Twilio phone numbers"
 					},
 					{
-						"name": "Get Twilio Usage",
+						"name": "Get Twilio usage",
 						"value": "getTwilioUsage",
 						"description": "Get Twilio usage statistics"
 					},
 					{
-						"name": "Get User Details",
+						"name": "Get user details",
 						"value": "getUser",
 						"description": "Get user data this includes tokens and settings"
 					},
 					{
-						"name": "Make Bulk Call",
+						"name": "Make bulk call",
 						"value": "makeBulkCall",
 						"description": "Make bulk phone calls"
 					},
 					{
-						"name": "Make Call",
+						"name": "Make call",
 						"value": "makeCall",
 						"description": "Make a phone call through assistant"
 					},
@@ -161,22 +160,22 @@ export class Vavicky implements INodeType {
 						"description": "Send SMS message through assistant"
 					},
 					{
-						"name": "Update Assistant",
+						"name": "Update assistant",
 						"value": "updateAssistant",
 						"description": "Update an existing assistant"
 					},
 					{
-						"name": "Update Assistant Files",
+						"name": "Update assistant files",
 						"value": "updateAssistantFiles",
 						"description": "Upload files to an assistant"
 					},
 					{
-						"name": "Update Deep Seek API Key",
+						"name": "Update Deepseek API Key",
 						"value": "updateTokenDeepSeek",
-						"description": "Update your Deep Seek API Key"
+						"description": "Update your Deepseek API Key"
 					},
 					{
-						"name": "Update Elevenlabs Token",
+						"name": "Update Elevenlabs token",
 						"value": "updateTokenElevenlabs",
 						"description": "Update your Elevenlabs API Key"
 					},
@@ -191,7 +190,7 @@ export class Vavicky implements INodeType {
 						"description": "Update your Open Router API Key"
 					},
 					{
-						"name": "Update OpenAI Token",
+						"name": "Update OpenAI token",
 						"value": "updateTokenOpenai",
 						"description": "Update your OpenAI API Key"
 					},
@@ -201,14 +200,14 @@ export class Vavicky implements INodeType {
 						"description": "Update your smtp settings for your custom email notifications"
 					},
 					{
-						"name": "Update Twilio Number",
+						"name": "Update Twilio number",
 						"value": "updateTwilioNumber",
 						"description": "Update Twilio number configuration"
 					},
 					{
-						"name": "Update White Label Details",
+						"name": "Update White Label details",
 						"value": "updateWhiteLabel",
-						"description": "Update White Label Details; name, description and color"
+						"description": "Update White Label details; name, description and color"
 					}
 				],
 				description: 'Choose an operation',

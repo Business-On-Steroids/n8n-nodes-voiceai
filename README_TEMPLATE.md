@@ -1,8 +1,10 @@
 # n8n-nodes-_node-name_
 
-This is an n8n community node. It lets you use _app/service name_ in your n8n workflows.
+This is an n8n community node. It lets you use _Voice AI directly integrated into your workflows and any business Automation and other programs/platforms, for InBound/OutBound Calling, Calendar Booking, Support Agents,and so much more. Anything that an AI Agent can possibly do but directly over regular Phone calls and inside/embeded website Text AND or Voice Chat Widgets.
 
-_App/service name_ is _one or two sentences describing the service this node integrates with_.
+VAVicky VoiceAI is the World's Best and Most Feature Rich and Highly Integrated VoiceAI Platform built for AI Marketing Agencies with Full White Label Rights.
+
+VAVicky is the Only VoiceAI Platform that has the Best Integrated API's and Integrations Directly and Natively with GoHighLevel (ZERO WORKFLOWS NEEDED = TIME SAVER), N8N Native Commnity Node Supported, Global MCP Model Context Protocol Available for Universal AI and all other Platform Connectivity. Webhooks Natively built inside VAVicky for ease of connection.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
