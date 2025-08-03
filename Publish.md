@@ -1,6 +1,11 @@
 # Publish
 
-Open porject in VScode
+Close the repository
+```bash
+git clone https://github.com/Business-On-Steroids/n8n-nodes-voiceai.git
+```
+
+Open project folder <strong>n8n-nodes-voiceai</strong> in VScode
 
 Open the terminal
 
