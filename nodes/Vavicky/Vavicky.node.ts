@@ -1578,7 +1578,7 @@ export class Vavicky implements INodeType {
 						throw new NodeOperationError(this.getNode(), `Operation '${operation}' not supported`);
 				}
 
-				const responseData = await this.helpers.request(options);
+				const responseData = await this.helpers.httpRequest(options);
 				returnData.push({ json: responseData });
 			} catch (error) {
 				if (this.continueOnFail()) {
