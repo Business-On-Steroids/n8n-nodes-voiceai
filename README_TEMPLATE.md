@@ -1,3 +1,4 @@
+![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 # n8n-nodes-_node-name_
 
 This is an n8n community node. It lets you use _Voice AI directly integrated into your workflows and any business Automation and other programs/platforms, for InBound/OutBound Calling, Calendar Booking, Support Agents,and so much more. Anything that an AI Agent can possibly do but directly over regular Phone calls and inside/embeded website Text AND or Voice Chat Widgets.
