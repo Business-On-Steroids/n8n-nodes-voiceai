@@ -19,7 +19,7 @@ export class Vavicky implements INodeType {
 		name: 'vavicky',
 		group: ['transform'],
 		version: 1,
-		icon: { light: 'file:agency.png', dark: 'file:agency.png' },
+		icon: { light: 'file:agency1.png', dark: 'file:agency1.png' },
 		description: 'Complete user friendly VoiceAI platform that sends and receives phone calls, SMS text messages, automates messages across social media platforms, and seamlessly integrates into any website and business CRM for the world\'s best professional fully integrated VoiceAI platform with any businesses internal CRM, Calendars and Booking systems. Full White Label Agency accounts available, you keep 100% of all profits and full branding and domain control.',
 		defaults: {
 			name: 'VoiceAI VAVicky',
