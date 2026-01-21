@@ -1131,8 +1131,7 @@ export class Vavicky implements INodeType {
 						'Authorization': `Bearer ${credentials.apiKey}`,
 						'Content-Type': 'application/json',
 					},
-					method: "",
-					uri: ""
+					method: "GET",
 				};
 
 				switch (operation) {
