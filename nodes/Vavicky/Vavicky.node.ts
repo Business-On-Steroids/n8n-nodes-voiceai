@@ -1131,7 +1131,8 @@ export class Vavicky implements INodeType {
 						'Authorization': `Bearer ${credentials.apiKey}`,
 						'Content-Type': 'application/json',
 					},
-					method: "GET",
+					method: "",
+					url: ""
 				};
 
 				switch (operation) {
@@ -1139,13 +1140,13 @@ export class Vavicky implements INodeType {
 					// Existing Assistant Operations
 					case 'getUser':
 						options.method = 'GET';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/user';
+						options.url = 'https://backend.vavicky.com/vavicky/api/user';
 						break;
 
 
 					case 'updateWhiteLabel':
 						options.method = 'PATCH';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/user';
+						options.url = 'https://backend.vavicky.com/vavicky/api/user';
 						options.body = {
 							whitelabel_name: this.getNodeParameter('whitelabel_name', i) as string,
 							whitelabel_description: this.getNodeParameter('whitelabel_description', i) as string,
@@ -1155,7 +1156,7 @@ export class Vavicky implements INodeType {
 
 					case 'updateSMTP':
 						options.method = 'PATCH';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/user/smtp';
+						options.url = 'https://backend.vavicky.com/vavicky/api/user/smtp';
 						options.body = {
 							smtp_email: this.getNodeParameter('smtp_email', i) as string,
 							smtp_password: this.getNodeParameter('smtp_password', i) as string,
@@ -1168,7 +1169,7 @@ export class Vavicky implements INodeType {
 
 					case 'updateTokenElevenlabs':
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/elevenlabs/oauth';
+						options.url = 'https://backend.vavicky.com/vavicky/api/elevenlabs/oauth';
 						options.body = {
 							elevenlabs_token: this.getNodeParameter('elevenlabs_token', i) as string,
 						};
@@ -1176,7 +1177,7 @@ export class Vavicky implements INodeType {
 
 					case 'updateTokenOpenai':
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/openai/oauth';
+						options.url = 'https://backend.vavicky.com/vavicky/api/openai/oauth';
 						options.body = {
 							openai_token: this.getNodeParameter('openai_token', i) as string,
 						};
@@ -1184,7 +1185,7 @@ export class Vavicky implements INodeType {
 
 					case 'updateTokenOpenRouter':
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/openrouter/oauth';
+						options.url = 'https://backend.vavicky.com/vavicky/api/openrouter/oauth';
 						options.body = {
 							openrouter_token: this.getNodeParameter('openrouter_token', i) as string,
 						};
@@ -1192,7 +1193,7 @@ export class Vavicky implements INodeType {
 
 					case 'updateTokenDeepSeek':
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/deepseek/oauth';
+						options.url = 'https://backend.vavicky.com/vavicky/api/deepseek/oauth';
 						options.body = {
 							deepseek_token: this.getNodeParameter('deepseek_token', i) as string,
 						};
@@ -1200,7 +1201,7 @@ export class Vavicky implements INodeType {
 
 					case 'updateTokenGemini':
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/gemini/oauth';
+						options.url = 'https://backend.vavicky.com/vavicky/api/gemini/oauth';
 						options.body = {
 							gemini_token: this.getNodeParameter('gemini_token', i) as string,
 						};
@@ -1208,24 +1209,24 @@ export class Vavicky implements INodeType {
 
 					case 'updateTwilio':
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/gemini/oauth';
+						options.url = 'https://backend.vavicky.com/vavicky/api/gemini/oauth';
 						break;
 
 					case 'getAssistants':
 						options.method = 'GET';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/assistants';
+						options.url = 'https://backend.vavicky.com/vavicky/api/assistants';
 						break;
 
 					case 'getAssistant':
 						const assistantId = this.getNodeParameter('assistantId', i) as string;
 						options.method = 'GET';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}`;
 						break;
 
 					case 'getOneAssistant':
 						const oneAssistantId = this.getNodeParameter('assistantId', i) as string;
 						options.method = 'GET';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/one/${oneAssistantId}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/one/${oneAssistantId}`;
 						break;
 
 					case 'createAssistant': {
@@ -1285,7 +1286,7 @@ export class Vavicky implements INodeType {
 						});
 
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/assistants';
+						options.url = 'https://backend.vavicky.com/vavicky/api/assistants';
 						options.body = body;
 						options.json = true;
 						break;
@@ -1318,7 +1319,7 @@ export class Vavicky implements INodeType {
 						});
 
 						options.method = 'PATCH';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}`;
 						options.body = body;
 						options.json = true;
 						break;
@@ -1327,14 +1328,14 @@ export class Vavicky implements INodeType {
 					case 'deleteAssistant': {
 						const assistantId = this.getNodeParameter('assistantId', i) as string;
 						options.method = 'DELETE';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}`;
 						break;
 					}
 
 					case 'getAssistantFiles': {
 						const assistantId = this.getNodeParameter('assistantId', i) as string;
 						options.method = 'GET';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/files`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/files`;
 						break;
 					}
 
@@ -1357,7 +1358,7 @@ export class Vavicky implements INodeType {
 						}
 
 						options.method = 'PATCH';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/files`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/files`;
 						options.formData = {
 							files: {
 								value: Buffer.from(binaryData.data, 'binary'),
@@ -1374,26 +1375,26 @@ export class Vavicky implements INodeType {
 						const assistantId = this.getNodeParameter('assistantId', i) as string;
 						const fileId = this.getNodeParameter('fileId', i) as string;
 						options.method = 'DELETE';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/files/${fileId}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/files/${fileId}`;
 						break;
 					}
 
 					case 'getAssistantUsage': {
 						const assistantId = this.getNodeParameter('assistantId', i) as string;
 						options.method = 'GET';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/usage`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/usage`;
 						break;
 					}
 
 					case 'getAssistantsTokenUsage': {
 						options.method = 'GET';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/assistants/all/token/usage';
+						options.url = 'https://backend.vavicky.com/vavicky/api/assistants/all/token/usage';
 						break;
 					}
 
 					case 'getDashboardAssistant': {
 						options.method = 'GET';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/assistants/gohighlevel/dashboard';
+						options.url = 'https://backend.vavicky.com/vavicky/api/assistants/gohighlevel/dashboard';
 						break;
 					}
 
@@ -1403,7 +1404,7 @@ export class Vavicky implements INodeType {
 						const audio = this.getNodeParameter('audio', i) as boolean;
 
 						options.method = 'POST';
-						options.uri = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/chat?audio=${audio}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/assistants/${assistantId}/chat?audio=${audio}`;
 						options.body = { message };
 						options.json = true;
 						break;
@@ -1422,13 +1423,13 @@ export class Vavicky implements INodeType {
 						if (limit) queryParams.append('limit', limit.toString());
 
 						options.method = 'GET';
-						options.uri = `https://backend.vavicky.com/vavicky/api/twilio/usage?${queryParams.toString()}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/twilio/usage?${queryParams.toString()}`;
 						break;
 					}
 
 					case 'getTwilioNumbers': {
 						options.method = 'GET';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/twilio/numbers';
+						options.url = 'https://backend.vavicky.com/vavicky/api/twilio/numbers';
 						break;
 					}
 
@@ -1446,13 +1447,13 @@ export class Vavicky implements INodeType {
 						if (locality) queryParams.append('locality', locality);
 
 						options.method = 'GET';
-						options.uri = `https://backend.vavicky.com/vavicky/api/twilio/numbers/available?${queryParams.toString()}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/twilio/numbers/available?${queryParams.toString()}`;
 						break;
 					}
 
 					case 'getCallsInProgress': {
 						options.method = 'GET';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/twilio/calls';
+						options.url = 'https://backend.vavicky.com/vavicky/api/twilio/calls';
 						break;
 					}
 
@@ -1460,7 +1461,7 @@ export class Vavicky implements INodeType {
 						const phoneNumber = this.getNodeParameter('phoneNumber', i) as string;
 
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/twilio/number/buy';
+						options.url = 'https://backend.vavicky.com/vavicky/api/twilio/number/buy';
 						options.body = { phoneNumber };
 						options.json = true;
 						break;
@@ -1479,7 +1480,7 @@ export class Vavicky implements INodeType {
 						if (smsWebhook) body.smsWebhook = smsWebhook;
 
 						options.method = 'PATCH';
-						options.uri = `https://backend.vavicky.com/vavicky/api/twilio/numbers/${numberSid}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/twilio/numbers/${numberSid}`;
 						options.body = body;
 						options.json = true;
 						break;
@@ -1490,7 +1491,7 @@ export class Vavicky implements INodeType {
 						const twilioToken = this.getNodeParameter('twilioToken', i) as string;
 
 						options.method = 'POST';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/twilio/oauth';
+						options.url = 'https://backend.vavicky.com/vavicky/api/twilio/oauth';
 						options.body = {
 							sid: twilioSid,
 							token: twilioToken
@@ -1519,7 +1520,7 @@ export class Vavicky implements INodeType {
 						}
 
 						options.method = 'POST';
-						options.uri = `https://backend.vavicky.com/vavicky/api/twilio/${assistantId}/sms`;
+						options.url = `https://backend.vavicky.com/vavicky/api/twilio/${assistantId}/sms`;
 						options.body = body;
 						options.json = true;
 						break;
@@ -1542,7 +1543,7 @@ export class Vavicky implements INodeType {
 						}
 
 						options.method = 'POST';
-						options.uri = `https://backend.vavicky.com/vavicky/api/twilio/${assistantId}/call`;
+						options.url = `https://backend.vavicky.com/vavicky/api/twilio/${assistantId}/call`;
 						options.body = body;
 						options.json = true;
 						break;
@@ -1553,7 +1554,7 @@ export class Vavicky implements INodeType {
 						const contactBulkId = this.getNodeParameter('contactBulkId', i) as string;
 
 						options.method = 'POST';
-						options.uri = `https://backend.vavicky.com/vavicky/api/twilio/${assistantId}/callbulk/${contactBulkId}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/twilio/${assistantId}/callbulk/${contactBulkId}`;
 						options.body = {};
 						options.json = true;
 						break;
@@ -1563,13 +1564,13 @@ export class Vavicky implements INodeType {
 						const callId = this.getNodeParameter('callId', i) as string;
 
 						options.method = 'DELETE';
-						options.uri = `https://backend.vavicky.com/vavicky/api/twilio/calls/${callId}`;
+						options.url = `https://backend.vavicky.com/vavicky/api/twilio/calls/${callId}`;
 						break;
 					}
 
 					case 'disconnectTwilio': {
 						options.method = 'DELETE';
-						options.uri = 'https://backend.vavicky.com/vavicky/api/twilio/';
+						options.url = 'https://backend.vavicky.com/vavicky/api/twilio/';
 						break;
 					}
 
