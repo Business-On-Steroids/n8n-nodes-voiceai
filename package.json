@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-voiceai",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Community node for integrating Vavicky with n8n",
   "keywords": [
     "n8n-community-node-package"
